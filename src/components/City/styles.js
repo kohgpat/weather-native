@@ -3,8 +3,8 @@ import styled from "styled-components/native";
 // box-shadow: 0 0 20px -2px rgba(0,0,0,0.1);
 
 export const City = styled.View`
-  height: 280px;
-  width: 280px;
+  height: 320px;
+  width: 100%;
   background-color: #fff;
   border-radius: 4px;
   display: flex;
@@ -14,7 +14,8 @@ export const City = styled.View`
 `;
 
 export const Header = styled.View`
-  display: flex;
+  flex: 1;
+  flex-direction: row;
   align-items: center;
   justify-content: space-between;
 `;
@@ -25,15 +26,20 @@ export const Name = styled.Text.attrs({
 })`
   margin: 10px;
   width: 80%;
+  font-size: 32px;
+  font-weight: bold;
 `;
 
-export const RemoveButton = styled.Button`
+export const RemoveButton = styled.TouchableOpacity`
   padding: 0;
-  font-weight: bold;
-  font-size: 32px;
   background-color: transparent;
-  border: 0;
   margin: 10px 10px 10px auto;
+`;
+
+export const RemoveButtonText = styled.Text`
+  font-size: 32px;
+  font-weight: bold;
+  color: #333;
 `;
 
 export const WeatherIcon = styled.View`
@@ -45,7 +51,8 @@ export const WeatherIcon = styled.View`
 
 export const Stats = styled.View`
   margin: auto 10px 10px;
-  display: flex;
+  flex: 1;
+  flex-direction: row;
   align-items: center;
   justify-content: space-between;
 `;
@@ -53,6 +60,8 @@ export const Stats = styled.View`
 // text-transform: capitalize;
 export const Stat = styled.Text`
   margin: 0;
+  font-size: 16px;
+  font-weight: bold;
 
   ${props =>
     props.major &&

@@ -27,10 +27,9 @@ const City = ({ city, settings, onRemoveCity }) => {
     <styles.City>
       <styles.Header>
         <styles.Name title={city.name}>{city.name}</styles.Name>
-        <styles.RemoveButton
-          title="&times;"
-          onPress={() => onRemoveCity(city)}
-        />
+        <styles.RemoveButton onPress={() => onRemoveCity(city)}>
+          <styles.RemoveButtonText>&times;</styles.RemoveButtonText>
+        </styles.RemoveButton>
       </styles.Header>
 
       {city.weather &&
