@@ -1,23 +1,48 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { Component } from 'react';
+import { applyMiddleware, compose, createStore } from "redux";
+import { Provider } from "react-redux";
+import createSagaMiddleware from "redux-saga";
+import throttle from "lodash/throttle";
+import { loadState, saveState } from "./src/storage";
+import rootReducer from "./src/store/rootReducer";
+import rootSaga from "./src/sagas/rootSaga";
+import { StackNavigator } from "react-navigation";
+import HomeScreen from "./src/screens/Home";
+import AddCityScreen from "./src/screens/AddCity";
 
-export default class App extends React.Component {
+const sagaMiddleware = createSagaMiddleware();
+const prealoadedState = loadState();
+
+const store = createStore(
+  rootReducer,
+  prealoadedState,
+  compose(applyMiddleware(sagaMiddleware)),
+);
+
+sagaMiddleware.run(rootSaga);
+
+const RootStack = StackNavigator(
+  {
+    Home: {
+      screen: HomeScreen
+    },
+    AddCity: {
+      screen: AddCityScreen
+    }
+  },
+  {
+    initialRouteName: "Home"
+  }
+);
+
+class App extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-        <Text>Changes you make will automatically reload.</Text>
-        <Text>Shake your phone to open the developer menu.</Text>
-      </View>
+      <Provider store={store}>
+        <RootStack />
+      </Provider>
     );
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App;
