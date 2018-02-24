@@ -59,7 +59,7 @@ class Form extends Component {
 
   render() {
     return (
-      <styles.Form inSidebar={this.props.inSidebar}>
+      <styles.Form inAddCityScreen={this.props.inAddCityScreen}>
         <styles.Block>
           <styles.Name>Enter City</styles.Name>
         </styles.Block>

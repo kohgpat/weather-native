@@ -5,18 +5,18 @@ import ButtonComponent from "../Button";
 import InputComponent from "../Input";
 
 export const Form = styled.View`
-  margin-top: 50px;
-  width: 300px;
+  margin: 20px;
   padding: 20px;
+  width: 100%;
+  max-width: 320px;
   background-color: #fff;
   border-radius: 4px;
 
   ${props =>
-    props.inSidebar &&
+    props.inAddCityScreen &&
     `
-    margin-top: 0;
+    margin-top: 40px;
     width: 100%;
-    height: 100%;
   `};
 `;
 
