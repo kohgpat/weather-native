@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders Celcius 1`] = `
+<styled.span>
+  °C
+</styled.span>
+`;
+
+exports[`renders Fahrenheit 1`] = `
+<styled.span>
+  °F
+</styled.span>
+`;
+
+exports[`renders null 1`] = `""`;
