@@ -16,14 +16,12 @@ class CitiesContainer extends Component {
   };
 
   render() {
-    const { cities, settings, isMobile, addCitySidebar } = this.props;
+    const { cities, settings } = this.props;
 
     return (
       <Cities
         cities={cities}
         settings={settings}
-        isMobile={isMobile}
-        addCitySidebar={addCitySidebar}
         onRemoveCity={this.handleRemoveCity}
       />
     );
