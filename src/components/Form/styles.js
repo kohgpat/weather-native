@@ -6,8 +6,6 @@ import InputComponent from "../Input";
 export const Form = styled.View`
   padding: 20px;
   margin: 0 20px 20px;
-  flex: 1;
-  flex-direction: column;
   background-color: #fff;
   border-radius: 4px;
   align-self: stretch;
@@ -36,8 +34,6 @@ export const Block = styled.View`
 `;
 
 export const Header = styled.View`
-  flex: 1;
-  flex-direction: row;
   margin-bottom: 5px;
 `;
 

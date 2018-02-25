@@ -37,7 +37,7 @@ class HomeScreen extends Component {
   componentWillMount() {
     this.props.navigation.setParams({
       settings: this.props.settings,
-      toggleSettingsUnits: this.toggleSettingsUnits,
+      toggleSettingsUnits: this.toggleSettingsUnits
     });
   }
 
@@ -56,9 +56,11 @@ class HomeScreen extends Component {
   render() {
     return (
       <Screen>
-        <CitiesContainer />
+        <styles.HomeScreen>
+          <CitiesContainer />
 
-        {this.props.cities.length < 1 && <FormContainer />}
+          {this.props.cities.length < 1 && <FormContainer />}
+        </styles.HomeScreen>
       </Screen>
     );
   }

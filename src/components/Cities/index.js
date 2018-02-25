@@ -17,6 +17,7 @@ class Cities extends Component {
 
   render() {
     const { cities, settings, onRemoveCity } = this.props;
+
     const data = cities.map(city => ({
       city,
       settings,

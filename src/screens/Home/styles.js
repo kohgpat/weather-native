@@ -2,6 +2,10 @@ import React from "react";
 import styled from "styled-components/native";
 import ButtonComponent from "../../components/Button";
 
+export const HomeScreen = styled.View`
+  flex: 1;
+`;
+
 const Settings = styled.View`
   flex: 1;
   flex-direction: row;
@@ -40,16 +44,14 @@ export const HeaderLeft = ({ settings, toggleSettingsUnits }) => {
       <SettingsControl
         isActive={settings.units === "celcius"}
         disabled={settings.units === "celcius"}
-        onPress={() => toggleSettingsUnits("celcius")}
-      >
+        onPress={() => toggleSettingsUnits("celcius")}>
         <SettingsControlTitle>C</SettingsControlTitle>
       </SettingsControl>
 
       <SettingsControl
         isActive={settings.units === "fahrenheit"}
         disabled={settings.units === "fahrenheit"}
-        onPress={() => toggleSettingsUnits("fahrenheit")}
-      >
+        onPress={() => toggleSettingsUnits("fahrenheit")}>
         <SettingsControlTitle>F</SettingsControlTitle>
       </SettingsControl>
     </Settings>
