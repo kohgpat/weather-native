@@ -15,6 +15,7 @@ class HomeScreen extends Component {
 
     return {
       title: "Weather",
+      headerBackTitle: null,
       headerLeft: (
         <styles.HeaderLeft
           settings={params.settings}
