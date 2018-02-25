@@ -65,7 +65,9 @@ class Form extends Component {
         </styles.Block>
 
         <styles.Block>
-          <styles.Label>Name</styles.Label>
+          <styles.Header>
+            <styles.Label>Name</styles.Label>
+          </styles.Header>
 
           <styles.Input
             name="name"
@@ -75,10 +77,11 @@ class Form extends Component {
         </styles.Block>
 
         <styles.Block>
-          <styles.Label>
-            Update interval
+          <styles.Header>
+            <styles.Label>Update interval</styles.Label>
+
             <styles.HelpText>(in minutes)</styles.HelpText>
-          </styles.Label>
+          </styles.Header>
 
           <styles.Input
             name="interval"

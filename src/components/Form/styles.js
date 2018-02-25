@@ -35,17 +35,22 @@ export const Block = styled.View`
   `};
 `;
 
-export const Label = styled.Text`
+export const Header = styled.View`
   flex: 1;
   flex-direction: row;
+  margin-bottom: 5px;
+`;
+
+export const Label = styled.Text`
   font-family: Roboto-Condensed-Regular;
   font-size: 16px;
-  margin-bottom: 5px;
-  justify-content: space-between;
 `;
 
 export const HelpText = styled.Text`
   color: #7f7f7f;
+  font-family: Roboto-Condensed-Regular;
+  font-size: 16px;
+  margin-left: auto;
 `;
 
 export const Input = styled(props => <InputComponent {...props} />)``;
