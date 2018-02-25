@@ -31,13 +31,12 @@ class Form extends Component {
       return false;
     }
 
-    const city = this.state;
-    const _city = {
-      ...city,
-      interval: convertMinutesToSeconds(city.interval) * 1000
+    const city = {
+      name: this.state.name.replace(/ /g, ''),
+      interval: convertMinutesToSeconds(this.state.interval) * 1000
     };
 
-    this.props.onAddCity(_city);
+    this.props.onAddCity(city);
 
     this.setState({
       ...INITIAL_STATE
