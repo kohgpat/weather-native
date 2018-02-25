@@ -10,10 +10,6 @@ const initialState = {
 
 const cities = (state = initialState, action) => {
   switch (action.type) {
-    // ALL
-    case actions.CITIES_ALL_SUCCESS: {
-      return citiesAllSuccess(state, action);
-    }
     // ADD
     case actions.CITIES_ADD: {
       return citiesAdd(state, action);
@@ -33,27 +29,6 @@ const cities = (state = initialState, action) => {
       return state;
     }
   }
-};
-
-// ALL
-const citiesAllSuccess = (state, action) => {
-  const newState = {
-    ...state,
-    entities: {
-      ...state.entities,
-      ...action.payload.cities.reduce((all, current) => {
-        all[current.id] = {
-          ...state.entities[current.id],
-          ...current
-        };
-
-        return all;
-      }, {})
-    },
-    data: uniq([...state.data, ...action.payload.cities.map(city => city.id)]),
-  };
-
-  return newState;
 };
 
 // ADD

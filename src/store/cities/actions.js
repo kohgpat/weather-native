@@ -4,14 +4,6 @@ export const citiesAll = () => ({
   type: CITIES_ALL
 });
 
-export const CITIES_ALL_SUCCESS = "CITIES_ALL_SUCCESS";
-export const citiesAllSuccess = cities => ({
-  type: CITIES_ALL_SUCCESS,
-  payload: {
-    cities
-  }
-});
-
 // ADD
 export const CITIES_ADD = "CITIES_ADD";
 export const citiesAdd = city => ({
