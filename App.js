@@ -34,6 +34,7 @@ const RootStack = StackNavigator(
     initialRouteName: "Home",
     navigationOptions: ({ navigation }) => ({
       headerStyle: {
+        backgroundColor: "#fff",
         height: 60,
         paddingTop: 10,
         paddingRight: 20,
