@@ -4,7 +4,8 @@ import * as actions from "./actions";
 
 const initialState = {
   entities: {},
-  data: []
+  data: [],
+  isFetching: false
 };
 
 const cities = (state = initialState, action) => {
@@ -14,6 +15,9 @@ const cities = (state = initialState, action) => {
       return citiesAllSuccess(state, action);
     }
     // ADD
+    case actions.CITIES_ADD: {
+      return citiesAdd(state, action);
+    }
     case actions.CITIES_ADD_SUCCESS: {
       return citiesAddSuccess(state, action);
     }
@@ -46,13 +50,18 @@ const citiesAllSuccess = (state, action) => {
         return all;
       }, {})
     },
-    data: uniq([...state.data, ...action.payload.cities.map(city => city.id)])
+    data: uniq([...state.data, ...action.payload.cities.map(city => city.id)]),
   };
 
   return newState;
 };
 
 // ADD
+const citiesAdd = (state, action) => ({
+  ...state,
+  isFetching: true
+});
+
 const citiesAddSuccess = (state, action) => ({
   ...state,
   entities: {
@@ -61,7 +70,8 @@ const citiesAddSuccess = (state, action) => ({
       ...action.payload.city
     }
   },
-  data: uniq([...state.data, action.payload.city.id])
+  data: uniq([...state.data, action.payload.city.id]),
+  isFetching: false
 });
 
 // REMOVE
