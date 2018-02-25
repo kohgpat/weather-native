@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import { applyMiddleware, compose, createStore } from "redux";
 import { Provider } from "react-redux";
 import createSagaMiddleware from "redux-saga";
@@ -16,7 +16,7 @@ const prealoadedState = loadState();
 const store = createStore(
   rootReducer,
   prealoadedState,
-  compose(applyMiddleware(sagaMiddleware)),
+  compose(applyMiddleware(sagaMiddleware))
 );
 
 sagaMiddleware.run(rootSaga);
@@ -31,7 +31,16 @@ const RootStack = StackNavigator(
     }
   },
   {
-    initialRouteName: "Home"
+    initialRouteName: "Home",
+    navigationOptions: ({ navigation }) => ({
+      headerStyle: {
+        height: 60,
+        paddingTop: 10,
+        paddingRight: 20,
+        paddingBottom: 10,
+        paddingLeft: 20
+      }
+    })
   }
 );
 
