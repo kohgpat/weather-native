@@ -40,7 +40,11 @@ const RootStack = StackNavigator(
         paddingRight: 20,
         paddingBottom: 10,
         paddingLeft: 20
-      }
+      },
+      headerTintColor: "#4FADDF",
+      headerTitleStyle: {
+        color: "#333"
+      },
     })
   }
 );

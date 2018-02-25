@@ -6,7 +6,6 @@ import * as styles from "./styles";
 
 class AddCityScreen extends Component {
   static navigationOptions = ({ navigation }) => ({
-    headerLeft: null,
     headerRight: (
       <styles.HeaderRight
         title="&times;"
