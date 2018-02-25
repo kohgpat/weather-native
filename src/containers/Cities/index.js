@@ -15,20 +15,27 @@ class CitiesContainer extends Component {
     this.props.actions.cities.citiesRemove(city);
   };
 
+  handleRefreshCities = () => {
+    this.props.actions.cities.citiesAll();
+  };
+
   render() {
-    const { cities, settings } = this.props;
+    const { isCitiesFetching, cities, settings } = this.props;
 
     return (
       <Cities
         cities={cities}
         settings={settings}
         onRemoveCity={this.handleRemoveCity}
+        onRefreshCities={this.handleRefreshCities}
+        isCitiesFetching={isCitiesFetching}
       />
     );
   }
 }
 
 const mapStateToProps = state => ({
+  isCitiesFetching: citiesSelectors.isFetching(state),
   cities: citiesSelectors.getCities(state),
   settings: {
     units: settingsSelectors.getUnits(state)

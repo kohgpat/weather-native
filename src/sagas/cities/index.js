@@ -22,14 +22,12 @@ export function* citiesAll() {
   if (cities.length) {
     yield all(
       cities.map(city =>
-        call(citiesAdd, {
-          payload: {
-            city: {
-              name: city.name,
-              interval: city.params.interval
-            }
-          }
-        })
+        put(
+          citiesActions.citiesAdd({
+            name: city.name,
+            interval: city.params.interval
+          })
+        )
       )
     );
   }

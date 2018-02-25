@@ -16,7 +16,13 @@ class Cities extends Component {
   );
 
   render() {
-    const { cities, settings, onRemoveCity } = this.props;
+    const {
+      cities,
+      settings,
+      onRemoveCity,
+      onRefreshCities,
+      isCitiesFetching
+    } = this.props;
 
     const data = cities.map(city => ({
       city,
@@ -37,6 +43,8 @@ class Cities extends Component {
         data={data}
         keyExtractor={this._keyExtractor}
         renderItem={this._renderItem}
+        onRefresh={onRefreshCities}
+        refreshing={isCitiesFetching}
       />
     );
   }
@@ -45,13 +53,17 @@ class Cities extends Component {
 Cities.propTypes = {
   cities: PropTypes.array.isRequired,
   settings: PropTypes.object.isRequired,
-  onRemoveCity: PropTypes.func.isRequired
+  onRemoveCity: PropTypes.func.isRequired,
+  onRefreshCities: PropTypes.func.isRequired,
+  isCitiesFetching: PropTypes.bool.isRequired
 };
 
 Cities.defaultProps = {
   cities: [],
   settings: null,
-  onRemoveCity: null
+  onRemoveCity: null,
+  onRefreshCities: null,
+  isCitiesFetching: false
 };
 
 export default Cities;
