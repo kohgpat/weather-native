@@ -4,18 +4,18 @@ import ButtonComponent from "../Button";
 import InputComponent from "../Input";
 
 export const Form = styled.View`
-  margin: 20px;
   padding: 20px;
-  width: 100%;
-  max-width: 320px;
+  margin: 0 20px 20px;
+  flex: 1;
+  flex-direction: column;
   background-color: #fff;
   border-radius: 4px;
+  align-self: stretch;
 
   ${props =>
     props.inAddCityScreen &&
     `
     margin-top: 40px;
-    width: 100%;
   `};
 `;
 
