@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { Button } from "react-native";
 import * as citiesSelectors from "../../store/cities/selectors";
 import * as settingsActions from "../../store/settings/actions";
+import * as settingsSelectors from "../../store/settings/selectors";
 import CitiesContainer from "../../containers/Cities";
 import FormContainer from "../../containers/Form";
 import Screen from "../../components/Screen";
@@ -65,7 +66,9 @@ class HomeScreen extends Component {
 
 const mapStateToProps = state => ({
   cities: citiesSelectors.getCities(state),
-  settings: state.settings
+  settings: {
+    units: settingsSelectors.getUnits(state)
+  }
 });
 
 const mapDispatchToProps = dispatch => ({
