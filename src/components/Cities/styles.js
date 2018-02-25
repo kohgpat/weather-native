@@ -11,5 +11,6 @@ export const Cities = styled.FlatList`
 export const NoCitiesMessage = styled.Text`
   margin-top: 20px;
   padding: 20px;
+  font-family: Roboto-Condensed-Regular;
   font-size: 16px;
 `;

@@ -27,6 +27,7 @@ const SettingsControl = styled.TouchableOpacity`
 
 const SettingsControlTitle = styled.Text`
   color: #fff;
+  font-family: Roboto-Condensed-Bold;
 `;
 
 export const HeaderLeft = ({ settings, toggleSettingsUnits }) => {

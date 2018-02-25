@@ -3,6 +3,7 @@ import { applyMiddleware, compose, createStore } from "redux";
 import { Provider } from "react-redux";
 import createSagaMiddleware from "redux-saga";
 import throttle from "lodash/throttle";
+import { Font } from "expo";
 import { loadState, saveState } from "./src/storage";
 import rootReducer from "./src/store/rootReducer";
 import rootSaga from "./src/sagas/rootSaga";
@@ -43,6 +44,8 @@ const RootStack = StackNavigator(
       },
       headerTintColor: "#4FADDF",
       headerTitleStyle: {
+        fontFamily: "Roboto-Condensed-Bold",
+        fontSize: 24,
         color: "#333"
       },
     })
@@ -50,7 +53,26 @@ const RootStack = StackNavigator(
 );
 
 class App extends Component {
+  state = {
+    fontLoaded: false
+  };
+
+  async componentDidMount() {
+    await Font.loadAsync({
+      "Roboto-Condensed-Regular": require("./assets/fonts/RobotoCondensed-Regular.ttf"),
+      "Roboto-Condensed-Bold": require("./assets/fonts/RobotoCondensed-Bold.ttf"),
+    });
+
+    this.setState({
+      fontLoaded: true
+    });
+  }
+
   render() {
+    if (!this.state.fontLoaded) {
+      return null;
+    }
+
     return (
       <Provider store={store}>
         <RootStack />

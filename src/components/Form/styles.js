@@ -22,7 +22,7 @@ export const Form = styled.View`
 export const Name = styled.Text`
   margin: 0;
   font-size: 16px;
-  font-weight: bold;
+  font-family: Roboto-Condensed-Bold;
 `;
 
 export const Block = styled.View`
@@ -38,6 +38,7 @@ export const Block = styled.View`
 export const Label = styled.Text`
   flex: 1;
   flex-direction: row;
+  font-family: Roboto-Condensed-Regular;
   font-size: 16px;
   margin-bottom: 5px;
   justify-content: space-between;

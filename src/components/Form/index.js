@@ -61,7 +61,7 @@ class Form extends Component {
     return (
       <styles.Form inAddCityScreen={this.props.inAddCityScreen}>
         <styles.Block>
-          <styles.Name>Add City</styles.Name>
+          <styles.Name>Enter City</styles.Name>
         </styles.Block>
 
         <styles.Block>

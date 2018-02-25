@@ -27,7 +27,7 @@ export const Name = styled.Text.attrs({
   margin: 10px;
   width: 80%;
   font-size: 32px;
-  font-weight: bold;
+  font-family: Roboto-Condensed-Bold;
 `;
 
 export const RemoveButton = styled.TouchableOpacity`
@@ -38,7 +38,7 @@ export const RemoveButton = styled.TouchableOpacity`
 
 export const RemoveButtonText = styled.Text`
   font-size: 32px;
-  font-weight: bold;
+  font-family: Roboto-Condensed-Bold;
   color: #333;
 `;
 
@@ -61,7 +61,7 @@ export const Stats = styled.View`
 export const Stat = styled.Text`
   margin: 0;
   font-size: 16px;
-  font-weight: bold;
+  font-family: Roboto-Condensed-Bold;
 
   ${props =>
     props.major &&
