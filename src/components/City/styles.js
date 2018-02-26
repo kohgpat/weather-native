@@ -9,7 +9,7 @@ export const City = styled.View`
   border-radius: 4px;
   display: flex;
   flex-direction: column;
-  padding: 20px;
+  padding: 10px;
   margin-top: 30px;
 `;
 
@@ -20,11 +20,25 @@ export const Header = styled.View`
   justify-content: space-between;
 `;
 
+export const SubHeader = styled.View`
+  flex: 1;
+  flex-direction: row;
+  justify-content: space-between;
+`;
+
+export const SubHeaderText = styled.Text`
+  margin: 0 10px;
+  color: #666;
+  font-size: 16px;
+  font-weight: 400;
+  font-family: Roboto-Condensed-Bold;
+`;
+
 export const Name = styled.Text.attrs({
   numberOfLines: 1,
   ellipsizeMode: "tail"
 })`
-  margin: 10px;
+  margin: 10px 10px 0;
   width: 80%;
   font-size: 32px;
   font-family: Roboto-Condensed-Bold;
@@ -42,15 +56,15 @@ export const RemoveButtonText = styled.Text`
   color: #333;
 `;
 
-export const WeatherIcon = styled.View`
-  display: flex;
+export const WeatherMain = styled.View`
+  flex: 1;
   align-items: center;
   justify-content: center;
-  margin-top: 30px;
+  margin: 0 auto;
 `;
 
 export const Stats = styled.View`
-  margin: auto 10px 10px;
+  margin: 10px;
   flex: 1;
   flex-direction: row;
   align-items: center;
