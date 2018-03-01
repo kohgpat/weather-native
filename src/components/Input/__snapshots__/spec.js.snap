@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders 1`] = `
+<TextInput
+  allowFontScaling={true}
+  style={
+    Array [
+      Object {
+        "borderColor": "#ccc",
+        "borderStyle": "solid",
+        "borderWidth": 1,
+        "fontFamily": "Roboto-Condensed-Regular",
+        "fontSize": 16,
+        "height": 40,
+        "paddingBottom": 8,
+        "paddingLeft": 8,
+        "paddingRight": 8,
+        "paddingTop": 8,
+        "width": "100%",
+      },
+      undefined,
+    ]
+  }
+/>
+`;

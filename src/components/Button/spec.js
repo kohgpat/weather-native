@@ -1,9 +1,9 @@
 /*global it, expect*/
 import React from "react";
 import Button from "./index";
-import { shallow } from "enzyme";
+import renderer from 'react-test-renderer';
 
 it("renders", () => {
-  const button = shallow(<Button>Button</Button>);
+  const button = renderer.create(<Button>Button</Button>).toJSON();
   expect(button).toMatchSnapshot();
 });

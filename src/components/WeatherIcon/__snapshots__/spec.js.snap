@@ -1,7 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders 1`] = `
-<styled.div
+<Image
   icon="10d"
+  source={
+    Object {
+      "uri": "https://openweathermap.org/img/w/10d.png",
+    }
+  }
+  style={
+    Array [
+      Object {
+        "height": 50,
+        "width": 50,
+      },
+      undefined,
+    ]
+  }
 />
 `;

@@ -1,15 +1,35 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`renders Celcius 1`] = `
-<styled.span>
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  ellipsizeMode="tail"
+  style={
+    Array [
+      Object {},
+      undefined,
+    ]
+  }
+>
   °C
-</styled.span>
+</Text>
 `;
 
 exports[`renders Fahrenheit 1`] = `
-<styled.span>
+<Text
+  accessible={true}
+  allowFontScaling={true}
+  ellipsizeMode="tail"
+  style={
+    Array [
+      Object {},
+      undefined,
+    ]
+  }
+>
   °F
-</styled.span>
+</Text>
 `;
 
-exports[`renders null 1`] = `""`;
+exports[`renders null 1`] = `null`;
