@@ -1,13 +1,6 @@
 /*global it, expect*/
 import "regenerator-runtime/runtime";
-import {
-  all,
-  call,
-  fork,
-  take,
-  put,
-  select
-} from "redux-saga/effects";
+import { all, call, fork, take, put, select } from "redux-saga/effects";
 import * as settingsSelectors from "../../store/settings/selectors";
 import * as citiesActions from "../../store/cities/actions";
 import * as citiesSelectors from "../../store/cities/selectors";
@@ -34,9 +27,12 @@ it("should call a citiesAll on citiesActions.CITIES_ALL with cities in store", (
   ).toEqual(
     all(
       cities.map(city =>
-        call(citiesSagas.citiesAdd, {
-          payload: { city: { name: city.name, interval: city.params.interval } }
-        })
+        put(
+          citiesActions.citiesAdd({
+            name: city.name,
+            interval: city.params.interval
+          })
+        )
       )
     )
   );
